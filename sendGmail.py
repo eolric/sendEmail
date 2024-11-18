@@ -4,7 +4,7 @@ import pandas as pd
 # Set credentials - establecer variables para la conexión al gmail
 name_account = "One Byte Ventures"
 email_account = "onebyteventures@gmail.com"
-password_account = "fhhnibcadtpnarlw" # password created in step 1.3.
+password_account = "fhhn ibca dtpn arlw" # password created in step 1.3.
 
 # 'smtp.gmail.com' and 465 port refer to Gmail as provider
 # Change these arguments if you are using another one
@@ -15,18 +15,19 @@ server.login(email_account, password_account)
 
 # Read the file that contains at least names & email addresses
 # Subjects & messages can be personalized, but we use them as input
-email_df = pd.read_excel("Data/emails.xlsx")
+email_df = pd.read_excel("./emails.xlsx")
 
 # Get all names, email addresses, subjects & messages
-all_names = email_df['Name']
+all_names = email_df['Nombre']
 all_emails = email_df['Email']
-all_subjects = email_df['Subject']
-all_messages = email_df['Message']
+all_subjects = email_df['Asunto']
+all_messages = email_df['Mensaje']
 
 
 # 
 for i in range(len(email_df)):
 
+    name = all_names[i]
     email = all_emails[i]
 
     # Personalized subject
