@@ -4,6 +4,7 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 import pandas as pd
 from jinja2 import Template
+import base64
 
 # Configuración del servidor SMTP
 smtp_server = "smtp.gmail.com"
@@ -21,7 +22,12 @@ asunto = "Asunto YOY, qué asunto ponemos?"
 with open("files/email.html", "r", encoding='utf-8') as file:
     template = Template(file.read())
 
-cuerpo = template.render()
+with open("files/foot_image.png", "rb") as imagen:
+        logoFootpy = base64.b64encode(imagen.read()).decode()
+
+cuerpo = template.render(
+        logoFoot  = logoFootpy
+        )
 
 
 # Función para enviar el correo
@@ -35,10 +41,8 @@ def enviar_correo(destinatario):
     mensaje.attach(MIMEText(cuerpo, 'html')) # Especificamos el tipo de texto en HTML
     
     # Agregamos la firma como documento interno (no adjunto)
-    with open("files/foot_image.png", "rb") as imagen:
-        firma = MIMEImage(imagen.read(), name="foot_YOY")
-        firma.add_header("Content-ID", "<firma_Innverto>")
-        mensaje.attach(firma)
+    
+        
 
     try:
         servidor = smtplib.SMTP_SSL(smtp_server, smtp_port)
