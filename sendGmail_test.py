@@ -37,3 +37,5 @@ def enviar_correo(destinatario):
 # Enviar correos a todos los destinatarios
 for destinatario in destinatarios:
     enviar_correo(destinatario)
+
+# Holisss 
