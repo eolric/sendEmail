@@ -6,7 +6,7 @@ from email.mime.text import MIMEText
 smtp_server = "smtp.gmail.com"
 smtp_port = 587  # o 465 para SSL
 smtp_user = "onebyteventures@gmail.com"
-smtp_password = "fhhn ibca dtpn arlw"
+smtp_password = ""
 
 # Lista de destinatarios
 destinatarios = ["eoglc15@gmail.com"]
