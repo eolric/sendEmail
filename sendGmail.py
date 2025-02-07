@@ -4,7 +4,7 @@ import pandas as pd
 # Set credentials - establecer variables para la conexión al gmail
 name_account = "One Byte Ventures"
 email_account = "onebyteventures@gmail.com"
-password_account = "fhhn ibca dtpn arlw" # password created in step 1.3.
+password_account = "" # password created in step 1.3.
 
 # 'smtp.gmail.com' and 465 port refer to Gmail as provider
 # Change these arguments if you are using another one
