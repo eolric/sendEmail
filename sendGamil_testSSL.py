@@ -22,7 +22,7 @@ class sendEmail:
         smtp_server = "smtp.gmail.com"
         smtp_port = 465  # Puerto para SSL
         smtp_user = "onebyteventures@gmail.com"
-        smtp_password = "fhhn ibca dtpn arlw"
+        smtp_password = ""
 
         # Lista de Excel
         # Leer la base de datos
